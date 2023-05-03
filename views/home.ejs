@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data records</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+            background-color: rgb(214, 244, 244);
+        }
+
+        tr {
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 17px;
+            /* column-gap: 50px; */
+        }
+
+        #datas {
+            display: block;
+            /* padding:17px; */
+            row-gap: 12px;
+
+        }
+        #heading{
+            display:flex;
+            flex-direction: row;
+            justify-content:end;
+            align-items: center;
+            text-align: center;
+        }
+        .options{
+            margin:23px;
+            padding:23px;
+        }
+        option{
+            display: block;
+            width:23px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="heading">
+        <div id="directory" class="options"><select name="directory" >
+                <option value="add directory" selected>add directory</option>
+                <option value="directory list"> directory list</option>
+            </select></div>
+        <div id="password" class="options"> <select name="password" >
+                <option value="add password">add password</option>
+                <option value="password list">password list</option>
+            </select> </div>
+    </header>
+    <div>
+        <table>
+            <thead id="main">
+                <tr id="row">
+                    <th> Directory</th>
+                    <th> Password</th>
+                    <th> Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(!data){%>
+                    <tr>
+                        <td class="datas">No data</td>
+                    </tr>
+                    <%} else {%>
+                    
+                        <tr>
+                            <td class="datas"> </td>
+                            <td class="datas"> </td>
+                        </tr>
+                        <%}%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

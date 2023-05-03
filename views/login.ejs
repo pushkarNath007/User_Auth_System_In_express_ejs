@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-style: normal;
+            font-family: fantasy;
+            font-weight: bold;
+            background: url("https://img.freepik.com/premium-vector/closed-padlock-digital-background-green-cyber-security_42077-4497.jpg?w=740") no-repeat ;
+            background-size: cover;
+            
+        }
+
+        #box {
+            background-color: rgb(41, 206, 55);
+            border: 1px solid rgb(140, 140, 220);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 461px;
+            height: 434px;
+            justify-content: center;
+            transform: scale(1.1);
+            position: absolute;
+            top: 68px;
+            left: 383px;
+            padding: 17px;
+        }
+
+        #err {
+            position: absolute;
+            top: 53px;
+            left: 503px;
+            z-index: 5;
+            font-size: medium;
+            font-style: italic;
+        }
+
+        .signup {
+            margin-top: 12px;
+            font-weight: bold;
+            /* font-size: 1px; */
+            display: block;
+            height: 19px;
+            width: 223px;
+            /* text-align: right;  */
+            /* margin-left: 12px;; */
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: 23px;
+            ;
+            padding: 12px;
+            font-size: small;
+        }
+
+        .naming {
+            text-align: left;
+            margin-right: 10px;
+            font-weight: lighter;
+        }
+
+        #con {
+            word-wrap: break-word;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #confirm {
+            margin-left: -18px;
+        }
+
+        #mail {
+            margin-left: 27px;
+        }
+
+        #content {
+            font-weight: bold;
+            font-size: x-large;
+            text-align: center;
+            width: 103%;
+            border-block-width: 0px;
+            border-bottom: 1px solid #4d4a4f;
+        }
+
+        #submit {
+            padding: 2px;
+            width: 65px;
+            height: 25px;
+            margin-top: 12px;
+        }
+        #dd{
+            position: relative;
+            top:4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/login" method="post">
+        <% if(data!=null){ %>
+            <p id="err">
+                <%=data%>
+            </p>
+            <%} %>
+                <div id="box">
+                    <div id="content"> login</div>
+                    <div class="main">
+                        <h3 class="naming">gmail: </h3> <input type="email" name="gmail" id="mail" class="signup"
+                            placeholder="Enter your gmail" required>
+                    </div>
+                    <div class="main">
+                        <h3 class="naming"> password: </h3><input type="password" name="password" id="pass"
+                            class="signup" placeholder="enter your password" required>
+                    </div>
+                    <button type="submit" id="submit"> submit</button>
+                    <div id="dd"> dont have an account? <a href="/signup">click here</a> </div>
+                </div>
+    </form>
+</body>
+
+</html>

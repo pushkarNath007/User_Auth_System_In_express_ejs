@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-style:normal;
+            font-family: fantasy;
+            font-weight:lighter;
+
+            background-color: rgb(214, 244, 244);
+        }
+
+        #box {
+            background-color: rgb(119 179 156);
+            border: 1px solid rgb(140, 140, 220);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 461px;
+            height: 434px;
+            justify-content: center;
+            transform: scale(1.1);
+            position: absolute;
+            top: 68px;
+            left: 383px;
+            padding: 17px;
+        }
+
+        #err {
+            position: absolute;
+            top: 53px;
+            left: 503px;
+            z-index: 5;
+            font-size:medium;
+            font-style: italic;
+        }
+
+        .signup {
+            margin-top: 12px;
+            font-weight: lighter;
+            /* font-size: 1px; */
+            display: block;
+            height: 19px;
+            width: 223px;
+            /* text-align: right;  */
+            /* margin-left: 12px;; */
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: 23px;
+            ;
+            padding: 12px;
+            font-size: small;
+        }
+
+        .naming {
+            text-align: left;
+            margin-right: 44px;
+            font-weight: lighter;
+            font-style: oblique;
+        }
+
+        #con {
+            word-wrap: break-word;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #confirm {
+            margin-left: -18px;
+        }
+
+        #mail {
+            margin-left: 27px;
+        }
+
+        #content {
+            font-weight: bold;
+            font-size: x-large;
+            /* text-align: center; */
+            width: 103%;
+            border-block-width: 0px;
+            border-bottom: 1px solid #4d4a4f;
+        }
+
+        #submit {
+            padding: 2px;
+            width: 65px;
+            height: 25px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/signup" method="post">
+        <% if(username!=null){ %>
+            <p id="err">
+                <%= username%>
+            </p>
+            <%} %>
+                <div id="box">
+                    <div id="content"> Sign Up</div>
+                    <div class="main">
+                        <h3 class="naming"> username: </h3><input type="text" name="username" id="user" class="signup"
+                            placeholder="enter your new username" required>
+                    </div>
+                    <div class="main">
+                        <h3 class="naming"> password: </h3><input type="password" name="password" id="pass"
+                            class="signup" placeholder="enter your password" required>
+                    </div>
+                    <div class="main">
+                        <h3 class="naming" id="con">confirm password: </h3><input type="password" name="cpassword"
+                            id="confirm" class="signup" placeholder="Re enter your password" required>
+                    </div>
+                    <div class="main">
+                        <h3 class="naming">gmail: </h3> <input type="email" name="gmail" id="mail" class="signup"
+                            placeholder="Enter your gmail" required>
+                    </div>
+                    <div class="main">
+                        <h3 class="naming">phone no:</h3><input type="tel" name="number" id="number" class="signup"
+                            placeholder="Enter your phone no " required>
+                    </div>
+                    <button type="submit" id="submit"> submit</button>
+                    <div> already have an account? <a href="/login">click here</a> </div>
+                </div>
+    </form>
+</body>
+
+</html>

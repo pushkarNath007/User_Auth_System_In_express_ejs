@@ -1,0 +1,7 @@
+.env
+package-lock.json
+package.json
+tailwind.config.js
+scratch
+node_modules
+
