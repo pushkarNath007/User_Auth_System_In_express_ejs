@@ -23,9 +23,5 @@ const sch = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  number: {
-    type: Number,
-    required: true,
-  },
 });
 module.exports = new mongoose.model(process.env.MODEL, sch);

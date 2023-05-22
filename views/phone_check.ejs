@@ -5,63 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new directory</title>
+    <title>phone confirm</title>
     <style>
-        body{
-            padding:0;
-            margin:0;
+        body {
+            padding: 0;
+            margin: 0;
             box-sizing: border-box;
             overflow-y: 0;
             font-style: oblique;
             font-family: fantasy;
             background-color: rgb(195, 225, 225);
         }
-        #container{
+
+        #container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding:16px;
-            margin-top:13%;
+            padding: 16px;
+            margin-top: 13%;
             margin-left: 33%;
-            height:150px;
-            border:1px solid rgb(124, 124, 147);
-            width:400px;
+            height: 150px;
+            border: 1px solid rgb(124, 124, 147);
+            width: 400px;
             word-wrap: break-word;
             background-color: rgb(70, 69, 138);
         }
-        button{
+
+        button {
             margin-top: 15px;
         }
-        #user{
-            width:100%;
+
+        #user {
+            width: 100%;
             /* display: flex;
             height:40px;
             flex-direction: column;
             justify-content: center;
             align-items:end; */
             text-align: end;
-            margin:12px -23px;
+            margin: 12px -23px;
 
         }
-        #new1{
-           padding-bottom: 2rem;
-           font-size:x-large; 
+
+        #new1 {
+            padding-bottom: 2rem;
+            font-size: x-large;
+        }
+
+        #submit {
+            padding: 2px;
+            width: 65px;
+            height: 25px;
+            margin-top: 12px;
         }
     </style>
 </head>
 
 <body>
-    <div id="user"><a href="/logout">Logout</a></div>
-    <div id="user"><a href="/home">Home</a></div>
-    <div id="container">
-            <div id="new1">Welcome User Authentication Team</div>
-            <div >
-                <label for="directory">Member Name :</label>
-                <input type="text" value="<%=username%>" name="directory" id="directory" required>
-            </div>
-    </div>
+    <form action="/number" method="post" id="container">
+        <div id="new1">Please Enter the code send to your mobile no</div>
+        <div>
+            <label for="directory">Code :</label>
+            <input type="text" name="number" id="directory" required>
+        </div>
+        <button type="submit" id="submit"> submit </button>
+    </form>
 </body>
 
 </html>

@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <title>data records</title>
     <style>
         body {
@@ -51,40 +56,36 @@
 </head>
 
 <body>
-    <header id="heading">
-        <div id="directory" class="options"><select name="directory" >
-                <option value="add directory" selected>add directory</option>
-                <option value="directory list"> directory list</option>
-            </select></div>
-        <div id="password" class="options"> <select name="password" >
-                <option value="add password">add password</option>
-                <option value="password list">password list</option>
-            </select> </div>
-    </header>
-    <div>
-        <table>
-            <thead id="main">
-                <tr id="row">
-                    <th> Directory</th>
-                    <th> Password</th>
-                    <th> Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if(!data){%>
-                    <tr>
-                        <td class="datas">No data</td>
-                    </tr>
-                    <%} else {%>
-                    
-                        <tr>
-                            <td class="datas"> </td>
-                            <td class="datas"> </td>
-                        </tr>
-                        <%}%>
-            </tbody>
-        </table>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/home">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">List</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/directory">directory</a>
+                            <a class="dropdown-item" href="/logout">logout</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit" fdprocessedid="l0k876">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 </body>
 
 </html>
